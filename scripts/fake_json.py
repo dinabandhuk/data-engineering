@@ -19,3 +19,4 @@ for x in range(10000):
     alldata["records"].append(data)
 
 json.dump(alldata, output)
+output.close()
