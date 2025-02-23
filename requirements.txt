@@ -59,6 +59,7 @@ dnspython==2.7.0
 elastic-transport==8.17.0
 elasticsearch==8.17.1
 email_validator==2.2.0
+Faker==36.1.1
 Flask==3.1.0
 Flask-AppBuilder==4.3.6
 flask-babel==4.0.0
