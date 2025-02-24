@@ -4,7 +4,6 @@ from airflow import DAG
 from airflow.operators.bash import BashOperator
 from airflow.operators.python import PythonOperator
 import pandas as pd
-import os
 
 def csvTojson():
     df = pd.read_csv("./scripts/data.csv")
