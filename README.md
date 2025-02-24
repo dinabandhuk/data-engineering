@@ -2,7 +2,7 @@
 data engineering project
 
 ## requirements
-Make sure **python 3.8** is the version in the virtual environment. Other python versions break.\
+Make sure **python 3.12.1** is the version in the virtual environment. Other python versions break.\
 **Don't** install with the following constraints:
 ```bash
 pip install 'apache-airflow[postgres,slack,celery]==2.10.4' --constraint "https://raw.git
