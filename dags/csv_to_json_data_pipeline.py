@@ -1,3 +1,4 @@
+import os
 import datetime as dt
 from datetime import timedelta
 from airflow import DAG
@@ -6,7 +7,9 @@ from airflow.operators.python import PythonOperator
 import pandas as pd
 
 def csvTojson():
-    df = pd.read_csv("../data/data.csv")
+    abspath = os.path.abspath(os.getcwd())
+    datapath = abspath.replace('dags', 'data/data.csv')
+    df = pd.read_csv(datapath)
     for i, r in df.iterrows():
         print(r['name'])
     df.to_json('fromAirflow.JSON', orient='records')
@@ -25,11 +28,11 @@ with DAG(
     # '0 * * * *',
 ) as dag:
     print_starting = BashOperator(
-        task_id = 'starting',
+        task_id = 'startingBashOperator',
         bash_command='echo "I am reading the csv now"'
     )
     CSVJSON = PythonOperator(
-        task_id = 'convertCSVtoJSON',
+        task_id = 'convertCSVtoJSONwithPython',
         python_callable=csvTojson
     )
 
