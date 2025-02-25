@@ -45,4 +45,11 @@ airflow users create --username root --password root1234 --firstname root --last
 airflow webserver
 airflow scheduler
 ```
+- resolve dag not being recognized after deleting from the web interface
+```bash
+airflow db shell
+```
+```bash
+UPDATE dag SET is_active=True, is_paused=False WHERE dag_id='your_dag_id';
+```
 
