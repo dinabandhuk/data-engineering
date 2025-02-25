@@ -6,7 +6,7 @@ from airflow.operators.python import PythonOperator
 import pandas as pd
 
 def csvTojson():
-    df = pd.read_csv("./scripts/data.csv")
+    df = pd.read_csv("../data/data.csv")
     for i, r in df.iterrows():
         print(r['name'])
     df.to_json('fromAirflow.JSON', orient='records')
