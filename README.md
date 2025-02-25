@@ -2,6 +2,11 @@
 data engineering project
 
 ## requirements
+- Make sure the `$AIRFLOW_HOME` variable points to your project directory so that DAGS can be conveniently placed in `project-directory/dags` rather than `~/airflow/` which is the default setting.In my case this line was added to `~/.bashrc`
+```bash
+export AIRFLOW_HOME=/home/mounam/projects_etc/data-engineering/airflow/
+```
+
 Make sure **python 3.12.1** is the version in the virtual environment. Other python versions break.\
 **Don't** install with the following constraints:
 ```bash
